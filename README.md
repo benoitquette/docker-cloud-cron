@@ -1,5 +1,5 @@
 # docker-cloud-cron
-[![Docker Automated buil](https://img.shields.io/docker/automated/benoitquette/docker-cloud-cron.svg)]() [![Docker Pulls](https://img.shields.io/docker/pulls/benoitquette/docker-cloud-cron.svg)]() [![Docker Stars](https://img.shields.io/docker/stars/benoitquette/docker-cloud-cron.svg)]()
+[![Docker Automated buil](https://img.shields.io/docker/automated/benoitquette/docker-cloud-cron.svg)](https://hub.docker.com/r/benoitquette/docker-cloud-cron/builds/) [![Docker Pulls](https://img.shields.io/docker/pulls/benoitquette/docker-cloud-cron.svg)](https://hub.docker.com/r/benoitquette/docker-cloud-cron/) [![Docker Stars](https://img.shields.io/docker/stars/benoitquette/docker-cloud-cron.svg)](https://hub.docker.com/r/benoitquette/docker-cloud-cron/)
 
 Schedule docker-cloud [Docker Cloud](https://cloud.docker.com) services from within your stack.
 

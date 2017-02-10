@@ -1,4 +1,8 @@
 # docker-cloud-cron
+[![Docker Automated buil](https://img.shields.io/docker/automated/benoitquette/docker-cloud-cron.svg)]()
+[![Docker Pulls](https://img.shields.io/docker/pulls/benoitquette/docker-cloud-cron.svg)]()
+[![Docker Stars](https://img.shields.io/docker/stars/benoitquette/docker-cloud-cron.svg)]()
+
 Schedule one-off starting of services in [Docker Cloud](https://cloud.docker.com).
 
 The goal of this project is to facilitate the starting of services in a cron-like fashion.

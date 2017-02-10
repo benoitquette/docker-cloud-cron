@@ -13,7 +13,7 @@ This is inspired from the [Rancher Cron Service](https://github.com/SocialEngine
 ## Setup
 
 Setting up an environment can be done in 2 steps:
-1. Adding a service based on the docker-cloud-cron image in one of your stack.
+1. Adding a service based on the [docker-cloud-cron](https://hub.docker.com/r/benoitquette/docker-cloud-cron/) image in one of your stack.
 You need to ensure that the service will have a 'global' role.
 ```yaml
 cron:
@@ -30,6 +30,11 @@ hello:
   labels:
     - 'docker-cloud-cron.schedule=0 1 * * * *'
 ```
+For now, the service can inspect all the services in your nodes.
+No restrictions on nodes or stacks.
+I have only tested this on a single node setup. Please let me know how it behaves on multiple nodes.
+
+[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/)
 
 ## CRON syntax
 

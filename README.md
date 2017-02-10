@@ -1,7 +1,7 @@
 # docker-cloud-cron
 [![Docker Automated buil](https://img.shields.io/docker/automated/benoitquette/docker-cloud-cron.svg)](https://hub.docker.com/r/benoitquette/docker-cloud-cron/builds/) [![Docker Pulls](https://img.shields.io/docker/pulls/benoitquette/docker-cloud-cron.svg)](https://hub.docker.com/r/benoitquette/docker-cloud-cron/) [![Docker Stars](https://img.shields.io/docker/stars/benoitquette/docker-cloud-cron.svg)](https://hub.docker.com/r/benoitquette/docker-cloud-cron/)
 
-Schedule docker-cloud [Docker Cloud](https://cloud.docker.com) services from within your stack.
+Schedule [Docker Cloud](https://cloud.docker.com) services from within your stack.
 
 The goal of this project is to facilitate the starting of services in a cron-like fashion.
 This will only work in Docker Cloud. This is inspired from the [Rancher Cron Service](https://github.com/SocialEngine/rancher-cron) project that already exists but for [Rancher](http://rancher.com/) only.
@@ -52,15 +52,15 @@ This is a quick reference to cron syntax and also shows the options supported.
 ### Allowed fields
 
 ```
- # ┌────────────── second (optional)
- # │ ┌──────────── minute
- # │ │ ┌────────── hour
- # │ │ │ ┌──────── day of month
- # │ │ │ │ ┌────── month
- # │ │ │ │ │ ┌──── day of week
- # │ │ │ │ │ │
- # │ │ │ │ │ │
- # * * * * * *
+# ┌────────────── second (optional)
+# │ ┌──────────── minute
+# │ │ ┌────────── hour
+# │ │ │ ┌──────── day of month
+# │ │ │ │ ┌────── month
+# │ │ │ │ │ ┌──── day of week
+# │ │ │ │ │ │
+# │ │ │ │ │ │
+# * * * * * *
 ```
 
 ### Allowed values

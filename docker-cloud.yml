@@ -1,0 +1,9 @@
+cron:
+  image: benoitquette/docker-cloud-cron
+  restart: always
+  roles:
+    - global
+hello:
+  image: helloworld
+  labels:
+    - 'docker-cloud-cron.schedule=0 1 * * * *'

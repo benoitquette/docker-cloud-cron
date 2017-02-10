@@ -4,6 +4,6 @@ cron:
   roles:
     - global
 hello:
-  image: helloworld
+  image: hello-world
   labels:
     - 'docker-cloud-cron.schedule=0 1 * * * *'

@@ -14,7 +14,7 @@ Setting up an environment can be done in 2 steps:
 
 ### Create the cron service
 
-Adding a service based on the [docker-cloud-cron](https://hub.docker.com/r/benoitquette/docker-cloud-cron/) image in one of your stack. You need to ensure that the service will have a 'global' role.
+Adding a service based on the [docker-cloud-cron](https://hub.docker.com/r/benoitquette/docker-cloud-cron/) image in one of your stack. You need to ensure that the service has a 'global' role.
 ```yaml
 cron:
   image: benoitquette/docker-cloud-cron
@@ -33,10 +33,10 @@ cron:
 
 ### Schedule services to be started
 
-Setting a label on a service of one of your stacks that will specify the schedule of the service in a crontab syntax. In the example below, the 'hello'service will be started every minute.
+Setting a label on a service of your stack that will specify the schedule of the service in a crontab syntax. In the example below, the 'hello'service will be started every minute.
 ```yaml
 hello:
-  image: helloworld
+  image: hello-world
   labels:
     - 'docker-cloud-cron.schedule=0 1 * * * *'
 ```

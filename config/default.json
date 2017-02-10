@@ -1,0 +1,11 @@
+{
+  "amqp": {
+    "connect": "amqp://localhost"
+  },
+  "mongo": {
+    "connect": "mongodb://localhost/web-audits"
+  },
+  "crawler": {
+    "schedule": "0 2 * * *"
+  }
+}

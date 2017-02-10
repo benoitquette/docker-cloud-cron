@@ -1,0 +1,51 @@
+{
+  "name": "docker-cloud-cron",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Schedule one-off starting of services in Docker Cloud.",
+  "author": "Benoit Quette",
+  "main": "bin/scheduler.js",
+  "scripts": {
+    "lint": "node ./node_modules/eslint/bin/eslint  --ext .js --ext .jsx .",
+    "test": "npm run coverage && npm run check-coverage",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --recursive \"./test/unit/**/*Spec.js\"",
+    "check-coverage": "istanbul check-coverage --statement 85",
+    "start": "node ./bin/scheduler.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "config": "^1.24.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.16.4",
+    "moment": "^2.15.1",
+    "node-cron": "^1.1.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-class-properties": "^6.16.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.14.0",
+    "chai": "^3.5.0",
+    "chai-things": "^0.2.0",
+    "cross-env": "^2.0.1",
+    "eslint": "^2.13.1",
+    "eslint-config-google": "^0.6.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.5.3",
+    "sinon": "^1.17.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benoitquette/docker-cloud-cron.git"
+  }
+}

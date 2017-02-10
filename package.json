@@ -10,6 +10,7 @@
     "start": "node ./bin/scheduler.js"
   },
   "dependencies": {
+    "async": "^2.1.4",
     "bluebird": "^3.4.7",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",

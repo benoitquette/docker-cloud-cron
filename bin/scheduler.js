@@ -12,7 +12,7 @@ const cron = require('node-cron');
 const LABEL = 'docker-cloud-cron.schedule';
 
 // retrieve API key
-const apiKey = process.env.DOCKERCLOUD.DOCKERCLOUD_AUTH;
+const apiKey = process.env.DOCKERCLOUD_AUTH;
 console.log(`Retrieved API key: ${apiKey}`);
 
 // look for all services with the label 'docker-cloud-cron.schedule'

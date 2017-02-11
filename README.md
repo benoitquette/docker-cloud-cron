@@ -22,7 +22,7 @@ cron:
   roles:
     - global
 ```
-[TBC] If you do not wish to assign this type of role, you will have to manually pass the username and API key as environment variables. You can get an API key from your Docker Cloud account.
+If you do not wish to assign this type of role, you will have to manually pass the username and API key as environment variables. You can get an API key from your Docker Cloud account.
 ```yaml
 cron:
   image: benoitquette/docker-cloud-cron
@@ -53,15 +53,15 @@ This is a quick reference to cron syntax and also shows the options supported.
 ### Allowed fields
 
 ```
- ┌────────────── second (optional)
- │ ┌──────────── minute
- │ │ ┌────────── hour
- │ │ │ ┌──────── day of month
- │ │ │ │ ┌────── month
- │ │ │ │ │ ┌──── day of week
- │ │ │ │ │ │
- │ │ │ │ │ │
- * * * * * *
+┌────────────── second (optional)
+│ ┌──────────── minute
+│ │ ┌────────── hour
+│ │ │ ┌──────── day of month
+│ │ │ │ ┌────── month
+│ │ │ │ │ ┌──── day of week
+│ │ │ │ │ │
+│ │ │ │ │ │
+* * * * * *
 ```
 
 ### Allowed values

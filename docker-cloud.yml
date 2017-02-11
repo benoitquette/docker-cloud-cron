@@ -6,4 +6,4 @@ cron:
 hello:
   image: hello-world
   labels:
-    - 'docker-cloud-cron.schedule= 1 * * * *'
+    - 'docker-cloud-cron.schedule=1 * * * *'

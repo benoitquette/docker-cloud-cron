@@ -22,13 +22,14 @@ cron:
   roles:
     - global
 ```
-[TBC] If you do not wish to assign this type of role, you will have to manually pass the API key as an environment variable. You can get an API key from your Docker Cloud account.
+[TBC] If you do not wish to assign this type of role, you will have to manually pass the username and API key as environment variables. You can get an API key from your Docker Cloud account.
 ```yaml
 cron:
   image: benoitquette/docker-cloud-cron
   restart: always
   environment:
-    - 'DOCKERCLOUD_AUTH=[your API key here]'
+    - 'DOCKERCLOUD_USER=[your username here]'
+    - 'DOCKERCLOUD_API_KEY=[your API key here]'
 ```
 
 ### Schedule services to be started
@@ -38,7 +39,7 @@ Setting a label on a service of your stack that will specify the schedule of the
 hello:
   image: hello-world
   labels:
-    - 'docker-cloud-cron.schedule=0 1 * * * *'
+    - 'docker-cloud-cron.schedule=1 * * * * *'
 ```
 For now, the service can inspect all the services in your nodes. No restrictions on nodes or stacks. I have only tested this on a single node setup. Please let me know how it behaves on multiple nodes.
 
@@ -52,15 +53,15 @@ This is a quick reference to cron syntax and also shows the options supported.
 ### Allowed fields
 
 ```
-# ┌────────────── second (optional)
-# │ ┌──────────── minute
-# │ │ ┌────────── hour
-# │ │ │ ┌──────── day of month
-# │ │ │ │ ┌────── month
-# │ │ │ │ │ ┌──── day of week
-# │ │ │ │ │ │
-# │ │ │ │ │ │
-# * * * * * *
+ ┌────────────── second (optional)
+ │ ┌──────────── minute
+ │ │ ┌────────── hour
+ │ │ │ ┌──────── day of month
+ │ │ │ │ ┌────── month
+ │ │ │ │ │ ┌──── day of week
+ │ │ │ │ │ │
+ │ │ │ │ │ │
+ * * * * * *
 ```
 
 ### Allowed values

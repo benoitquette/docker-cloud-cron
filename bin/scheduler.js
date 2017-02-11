@@ -27,9 +27,9 @@ buildAuthenticationToken((err, auth) => {
     console.log(`Found ${services.length} service(s) to schedule.`);
     return _.each(services, (service => {
       cron.schedule(service.schedule, () => {
-        dockerCloud.startService(service.uuid, auth, err => {
+        dockerCloud.restartService(service.uuid, auth, err => {
           if (err) return console.log(err);
-          console.log(`Request to start service ${service.uuid} sent successfuly.`);
+          console.log(`Request to restart service ${service.uuid} sent successfuly.`);
         })
       });
       console.log(`Scheduled service ${service.name} to ${service.schedule}.`);

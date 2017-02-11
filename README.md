@@ -9,12 +9,14 @@ This will only work in Docker Cloud. This is inspired from the [Rancher Cron Ser
 ## Setup
 
 Setting up an environment can be done in 2 steps:
+
 1. Create the cron service
 2. Schedule services to be started
 
 ### Create the cron service
 
 Adding a service based on the [docker-cloud-cron](https://hub.docker.com/r/benoitquette/docker-cloud-cron/) image in one of your stack. You need to ensure that the service has a 'global' role.
+
 ```yaml
 cron:
   image: benoitquette/docker-cloud-cron
@@ -22,7 +24,10 @@ cron:
   roles:
     - global
 ```
+
 If you do not wish to assign this type of role, you will have to manually pass the username and API key as environment variables. You can get an API key from your Docker Cloud account.
+
+
 ```yaml
 cron:
   image: benoitquette/docker-cloud-cron
@@ -34,14 +39,18 @@ cron:
 
 ### Schedule services to be started
 
-Setting a label on a service of your stack that will specify the schedule of the service in a crontab syntax. In the example below, the 'hello'service will be started every minute.
+This can be don by setting a label on a service of your stack. The label that will specify the schedule of the service in a crontab syntax. In the example below, the 'hello'service will be started every minute.
+
 ```yaml
 hello:
   image: hello-world
   labels:
     - 'docker-cloud-cron.schedule=1 * * * * *'
 ```
-For now, the service can inspect all the services in your nodes. No restrictions on nodes or stacks. I have only tested this on a single node setup. Please let me know how it behaves on multiple nodes.
+
+For now, the service can inspect all the services in your nodes. No restrictions on nodes or stacks.
+
+*I have only tested this on a single node setup. Please let me know how it behaves on multiple nodes.*
 
 [![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/benoitquette/docker-cloud-cron)
 
@@ -121,5 +130,22 @@ Or with short names:
 
 ## Configuration
 
-## What's next
+Several environment variables can be used to configure the service:
+
+|       variable       |        desc        |       default    |
+|----------------------|--------------------|------------------|
+|         LABEL        | the name/key of the label used to specify the schedule       | docker-cloud-cron.schedule |
+|       API_LIMIT      | the limit used when calling the docker cloud API to introspect the services  | 100 |
+|     DOCKERCLOUD_USER | the docker cloud username        | NA
+| DOCKERCLOUD_API_KEY  | the docekr cloud API key|NA
+
+## What's left
+
+- [ ] Linting
+- [ ] Unit tests
+- [ ] API key authentication
+- [ ] Test on multinode environment
+- [ ] Implement scopping: global vs stack
+- [ ] Audetect orchestration platform: Docker Cloud, Swarm, Rancher etc..
+- [ ] Implement for Rancher
 

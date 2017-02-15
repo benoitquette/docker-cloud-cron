@@ -21,19 +21,16 @@ const stack = process.env.DOCKERCLOUD_STACK_NAME;
 buildAuthenticationToken((err, auth) => {
   if (err) return console.log(err);
   // look for all services with the appropriate label
-  return dockerCloud.findServicesByLabel(label, auth, apiLimit, (err, services) => {
-    if (err) return console.log(err);
+  return dockerCloud.findServicesByLabel(label, auth, apiLimit, (service) => {
     // we schedule each of the service to start as specified in the label text
-    console.log(`Found ${services.length} service(s) to schedule.`);
-    return _.each(services, (service => {
-      cron.schedule(service.schedule, () => {
-        dockerCloud.restartService(service.uuid, auth, err => {
-          if (err) return console.log(err);
-          console.log(`Request to restart service ${service.uuid} sent successfuly.`);
-        })
-      });
-      console.log(`Scheduled service ${service.name} to ${service.schedule}.`);
-    }));
+    console.log(`Found service ${service.name} to schedule.`);
+    cron.schedule(service.schedule, () => {
+      dockerCloud.restartService(service.uuid, auth, err => {
+        if (err) return console.log(err);
+        console.log(`Request to restart service ${service.uuid} sent successfuly.`);
+      })
+    });
+    console.log(`Scheduled service ${service.name} to ${service.schedule}.`);
   });
 });
 
